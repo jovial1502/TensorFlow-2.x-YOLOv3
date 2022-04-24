@@ -34,11 +34,11 @@ if YOLO_TYPE                == "yolov3":
                                [[30,  61], [62,   45], [59,  119]],
                                [[116, 90], [156, 198], [373, 326]]]
 # Train options
-TRAIN_YOLO_TINY             = False
+TRAIN_YOLO_TINY             = True
 TRAIN_SAVE_BEST_ONLY        = True # saves only best model according validation loss (True recommended)
 TRAIN_SAVE_CHECKPOINT       = False # saves all best validated checkpoints in training process (may require a lot disk space) (False recommended)
-TRAIN_CLASSES               = "mnist/mnist.names"
-TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
+TRAIN_CLASSES               = "model_data/coco/coco.names"
+TRAIN_ANNOT_PATH            = "model_data/coco/val2017.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
 TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
@@ -51,10 +51,10 @@ TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
 TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 100
+TRAIN_EPOCHS                = 1
 
 # TEST options
-TEST_ANNOT_PATH             = "mnist/mnist_test.txt"
+TEST_ANNOT_PATH             = "model_data/coco/val2017.txt"
 TEST_BATCH_SIZE             = 4
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
@@ -67,3 +67,8 @@ if TRAIN_YOLO_TINY:
     # YOLO_ANCHORS            = [[[23, 27],  [37, 58],   [81,  82]], # this line can be uncommented for default coco weights
     YOLO_ANCHORS            = [[[10, 14],  [23, 27],   [37, 58]],
                                [[81,  82], [135, 169], [344, 319]]]
+
+
+# ALEKSEI's options
+
+SAVE_YOLOV3TINY             = False
